@@ -8,10 +8,18 @@ use App\Models\Evento;
 class EventoController extends Controller
 {
     public function index(){
+$search = request ('search');
 
-        $events =Event::all();
-        return view('welcome',['events'=> $events]);
-        
+if($search){
+$evento = Evento::where([
+['title','like', '%'.$search.'%']
+])->get();
+} else{
+    $evento = Evento::all();
+}
+
+        return view('welcome',['evento'=> $evento, 'search' => $search]);
+
     }
 
     public function create(){
@@ -21,10 +29,12 @@ class EventoController extends Controller
     public function store(Request $request){
         $evento = new  Evento;
         $evento->title = $request->title;
+        $evento->date = $request->date;
         $evento->description = $request->description;
         $evento->private = $request->private;
         $evento->city = $request->city;
-        
+        $evento->itens = $request->itens;
+
         if($request->hasfile('image') && $request->file('image')->isValid()){
             $requestImage = $request->image;
             $extension =$requestImage->extension();
@@ -32,15 +42,15 @@ class EventoController extends Controller
             $requestImage->move(public_path('img/events'), $imageName);
             $evento->image = $imageName;
         }
-            
+
 $evento->save();
 return redirect('/');
     }
 
     public function show($id){
-        $event = Event::findOrfail($id);
-        return view('events.show',['event'=>$evento]);
+        $evento = Evento::findOrfail($id);
+        return view('events.show',['evento'=>$evento]);
     }
-    
+
 }
 

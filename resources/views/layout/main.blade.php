@@ -4,14 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/index.css">
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <script src="/js/jquery3.5.1.js"></script>
-        <script src="/js/js.min.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/app.css/">
+        <script src="/js/jquery.js"></script>
+        <script src="/js/js.js"></script>
 
         <title>@yield('title')</title>
 
-       
-     
+
+
     </head>
     <body>
 
