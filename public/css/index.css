@@ -1,66 +1,75 @@
-.navbar-brand {
-    font-size: 17px;
-    font-family: 'Bold';
-}
-
-body {
-    min-height: 100vh;
-    padding-bottom: 100px;
-    position: relative;
-}
-
-header {
-    background: #fff;
-    border-bottom: solid #CCC 1px;
-}
-
-.container-fluid {
-    padding: 0;
-}
-
-.row {
-    margin: 0;
-}
-
-#botao {
-    background: #F2A340;
-    border: 2px solid #C28008;
-}
-
-footer {
-    background: rgb(129, 129, 17);
-    font-size: 14px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-#itens-lista {
-    list-style: none;
-    padding-left: 0;
-}
-
-#itens-lista li {
-    display: flex;
-}
-
-#image-container img {
-    border-radius: 10px;
-    width: 100%;
-    height: 300px;
-}
-
-#info-container h1 {
-    font-size: 40px;
-    font-weight: 900;
-}
-
-#info-container p {
-    margin: 0;
-    font-size: 14px;
-}
-
-#info-container #event-submit {
-    background: #C28008;
-    border: 2px solid #C28008;
-}
-
-#image {}
+    .navbar-brand {
+        font-size: 17px;
+        font-family: 'Bold';
+    }
+    
+    body {
+        min-height: 100vh;
+        padding-bottom: 100px;
+        position: relative;
+    }
+    
+    header {
+        background: #fff;
+        border-bottom: solid #CCC 1px;
+    }
+    
+    .container-fluid {
+        padding: 0;
+    }
+    
+    .row {
+        margin: 0;
+    }
+    
+    .dashboard-title-container {
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    
+    .dashboard-evento-container th {
+        width: 25%;
+    }
+    
+    #botao {
+        background: #F2A340;
+        border: 2px solid #C28008;
+    }
+    
+    footer {
+        background: rgb(129, 129, 17);
+        font-size: 14px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    
+    #itens-lista {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    #itens-lista li {
+        display: flex;
+    }
+    
+    #image-container img {
+        border-radius: 10px;
+        width: 100%;
+        height: 300px;
+    }
+    
+    #info-container h1 {
+        font-size: 40px;
+        font-weight: 900;
+    }
+    
+    #info-container p {
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    #info-container #event-submit {
+        background: #C28008;
+        border: 2px solid #C28008;
+    }
+    
+    #image {}

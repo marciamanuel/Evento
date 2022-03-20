@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Evento;
+use App\Models\User;
 
 class EventoController extends Controller
 {
@@ -42,14 +43,25 @@ $evento = Evento::where([
             $requestImage->move(public_path('img/events'), $imageName);
             $evento->image = $imageName;
         }
-
+$user = auth()->user();
+$evento-> user_id = $user->id;
 $evento->save();
 return redirect('/');
     }
 
     public function show($id){
         $evento = Evento::findOrfail($id);
-        return view('events.show',['evento'=>$evento]);
+        $eventoOwner = User::where('id', $evento->user_id)->first()
+        ->toArray();
+   
+           
+        return view('events.show',['evento'=>$evento, 'eventoOwner'=>$eventoOwner]);
+    }
+
+    public function dashboard(){
+        $user = auth()->user();
+        $evento = $user->evento;
+        return view('events.dashboard', ['evento'=>$evento]);
     }
 
 }

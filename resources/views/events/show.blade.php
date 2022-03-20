@@ -12,10 +12,10 @@
         <h1 class="text-danger">{{$evento->title}}</h1>
         <p class="event-city">{{$evento->city}}</p>
         <p class="event-participants">Xparticipantes</p>
-        <p class="event-owner">Dono do Evento</p>
+        <p class="event-owner">{{ $eventoOwner['name'] }}</p>
         <a href="" class="btn btn-primary" id="event-submit">Confirmar presença</a>
         
-        <h3>O evento conta com:</h3>
+        <h3 class="">O evento conta com:</h3>
         <ul id="itens-lista">
             @foreach($evento->itens as  $item)
                <li><i class="play-outline"></i>{{$item}}</li> 
@@ -23,7 +23,7 @@
 
         </ul>
     </div>
-        <div class="col-md-12" id="description-container">
+        <div class="col-md-12 mt-5" id="description-container">
         <h3>Sobre o Evento:</h3>
         <p class="event-description">{{$evento->description}}</p>
         </div>

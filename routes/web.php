@@ -15,13 +15,11 @@ use App\Http\Controllers\EventoController;
 */
 
 Route::get('/', [EventoController::class, 'index']);
-Route::get('/events/create', [EventoController::class, 'create']);
+Route::get('/events/create', [EventoController::class, 'create'])->middleware('auth');
 Route::get('/events/{id}', [EventoController::class, 'show']);
 Route::get('/contacto', [EventoController::class, 'contacto']);
 Route::post('/events', [EventoController::class, 'store']);
 
 
+Route::get('/dashboard',[EventoController::class, 'dashboard'])->middleware('auth');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
