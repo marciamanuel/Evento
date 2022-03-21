@@ -9,7 +9,7 @@
 
 </div>
 <div class="col-md-10 offset-md-1 dashboard-evento-container">
-    @if(count(array($evento))>0)
+    @if(count($evento)>0)
     <table class="table">
         <thead>
             <tr>
@@ -21,7 +21,9 @@
         </thead>
    
         <tbody>
-            @foreach ((array)$evento as $even)
+            
+           
+            @foreach ($evento as $even)
                 <tr>
                     <td scropt="row"> 
         {{$loop->index+1 }}

@@ -60,8 +60,8 @@ return redirect('/');
 
     public function dashboard(){
         $user = auth()->user();
-        $evento = $user->evento;
-        return view('events.dashboard', ['evento'=>$evento]);
+        $evento = Evento::where('user_id', $user->id)->get();
+        return view('events.dashboard', compact('evento'));
     }
 
 }
