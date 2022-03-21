@@ -19,21 +19,23 @@
                 <th class="col">Ações</th>
             </tr>
         </thead>
-   
+
         <tbody>
-            
-           
+
+
             @foreach ($evento as $even)
                 <tr>
-                    <td scropt="row"> 
+                    <td scropt="row">
         {{$loop->index+1 }}
                     </td>
                     <td>
                         <a href="/events/{{$even->id }}">{{$even->title }}</a>
                     </td>
                     <td>0</td>
-                    <td> <a href="#">Editar</a> <a href="#">Eliminar</a> </td>
+                    <td> <a href="{{route( 'edit',$even->id) }}" class="btn btn-info">Editar</a>
 
+
+                        <a href="{{route( 'index.eliminar',$even->id) }}" class="btn btn-danger">Eliminar</a>
                 </tr>
 
             @endforeach
@@ -41,7 +43,7 @@
     </table>
 
        @else
-       <p>Você ainda não tem eventos, <a href="/events/create">Criar evento</a> </p> 
+       <p>Você ainda não tem eventos, <a href="/events/create">Criar evento</a> </p>
     @endif
 </div>
 @endsection

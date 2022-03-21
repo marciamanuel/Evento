@@ -16,10 +16,12 @@ use App\Http\Controllers\EventoController;
 
 Route::get('/', [EventoController::class, 'index']);
 Route::get('/events/create', [EventoController::class, 'create'])->middleware('auth');
-Route::get('/events/{id}', [EventoController::class, 'show']);
+Route::get('/events/{id}', [EventoController::class, 'show'])->name('show');
 Route::get('/contacto', [EventoController::class, 'contacto']);
 Route::post('/events', [EventoController::class, 'store']);
-
+Route::get('/events/{id}',[EventoController::class, 'destroy'])->name('index.eliminar');
+Route::get('/events/update{id}', [EventoController::class, 'update'])->name('editar');
+Route::get('/events{id}', [EventoController::class, 'edit'])->name('edit');
 
 Route::get('/dashboard',[EventoController::class, 'dashboard'])->middleware('auth');
 
